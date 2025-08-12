@@ -2,7 +2,7 @@
   <img src="imgs/tzloc_logo.png" style="width: 200px" />
 </p>
 
-# tzloc – Timezone point-lookup library (Boost.Geometry + R-tree)
+# Timezone point-lookup library (Boost.Geometry + R-tree)
 
 `tzloc` is a small C++ library that answers: **“Which IANA timezone(s) cover this latitude/longitude?”**  
 It bakes the timezone polygons directly into the library at **build time**, so your apps do **zero file I/O** at runtime.

@@ -260,6 +260,6 @@ The generated TU can be big. Solutions:
 
 ## License
 
-- Library source in this repository: your chosen license (e.g., MIT/Apache-2.0) — fill this in.
+- Library source in this repository: MIT.
     
 - The timezone geometry comes from **timezone-boundary-builder**, which has its own license/attribution terms. Ensure you comply with their project’s license when distributing binaries that embed the data.

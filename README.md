@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="imgs/tzloc.png" />
+  <img src="imgs/tzloc.png" style="width: 100px;height: 100px;" />
 </p>
 
 # tzloc – Timezone point-lookup library (Boost.Geometry + R-tree)

@@ -7,7 +7,7 @@
 // Header-only JSON for simplicity (generator-only dependency).
 // You can vendor this header or fetch it in CMake.
 // https://github.com/nlohmann/json (MIT)
-#include <nlohmann/json.hpp>
+#include <json.hpp>
 using nlohmann::json;
 
 /*
@@ -43,7 +43,7 @@ void build(std::vector<tzloc::Polygon>& out_polys,
            std::vector<std::string>& out_tzids) {
     out_polys.clear();
     out_tzids.clear();
-    out_polys.reserve()";
+    out_polys.reserve)";
 }
 
 static void write_epilogue(std::ostream& os) {
@@ -145,7 +145,7 @@ int main(int argc, char** argv) {
     }
 
     write_prologue(os);
-    os << "(" << poly_count << ")";
+    os << "(" << poly_count << ");";
     os << R"(
 
     // For each polygon part we emit a Polygon and a matching tzid.

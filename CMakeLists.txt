@@ -59,3 +59,27 @@ install(TARGETS timezone_locator
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin)
 install(FILES include/TimezoneLocator.hpp DESTINATION include)
+
+# Disable IPO/LTCG everywhere in this project
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG OFF)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE OFF)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO OFF)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_MINSIZEREL OFF)
+
+if (MSVC)
+  # Be explicit
+  target_compile_options(timezone_locator PRIVATE /bigobj)
+  target_compile_options(gen_tz            PRIVATE /bigobj)
+
+  # Safety: remove any stray LTCG flags injected by toolchains/presets
+  foreach(cfg DEBUG RELEASE RELWITHDEBINFO MINSIZEREL)
+    foreach(var CMAKE_EXE_LINKER_FLAGS_${cfg} CMAKE_SHARED_LINKER_FLAGS_${cfg} CMAKE_STATIC_LINKER_FLAGS_${cfg})
+      if (DEFINED ${var})
+        string(REPLACE "/LTCG" "" ${var} "${${var}}")
+        set(${var} "${${var}}" PARENT_SCOPE)
+      endif()
+    endforeach()
+  endforeach()
+endif()
+

@@ -4,7 +4,7 @@
 #include <vector>
 #include <stdexcept>
 
-#include <nlohmann/json.hpp>
+#include <json.hpp>
 using nlohmann::json;
 
 #include <boost/archive/binary_oarchive.hpp>

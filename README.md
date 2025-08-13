@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="img/tzloc_logo.png" style="width:100px;" />
+</p>
+
 # tzloc – Timezone Point-Lookup Library (Boost.Geometry + Boost.Serialization)
 
 `tzloc` answers: **“Which IANA timezone(s) cover this latitude/longitude?”**  

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/tzloc_logo.png" style="width:100px;" />
+  <img src="imgs/tzloc_logo.png" style="width:100px;" />
 </p>
 
 # tzloc – Timezone Point-Lookup Library (Boost.Geometry + Boost.Serialization)

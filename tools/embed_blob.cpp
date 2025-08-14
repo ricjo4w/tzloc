@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
     os << "// AUTO-GENERATED. Do not edit.\n"
           "#include <cstddef>\n"
           "namespace tzloc_blob_ns {\n"
-          "alignas(16) const unsigned char tzloc_blob[] = {";
+          "extern const unsigned char tzloc_blob[] = {";
     os << std::hex << std::setfill('0');
     for (size_t i=0;i<data.size();++i) {
         if (i % 12 == 0) os << "\n  ";
@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
         if (i + 1 != data.size()) os << ", ";
     }
     os << "\n};\n";
-    os << "const std::size_t tzloc_blob_size = " << std::dec << data.size() << ";\n";
+    os << "extern const std::size_t tzloc_blob_size = " << std::dec << data.size() << ";\n";
     os << "} // namespace tzloc_blob_ns\n";
     return 0;
 }
